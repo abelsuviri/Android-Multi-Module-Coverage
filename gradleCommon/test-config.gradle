@@ -1,0 +1,6 @@
+apply from: "$rootProject.projectDir/gradleCommon/jacoco-config.gradle"
+dependencies {
+    testImplementation "androidx.arch.core:core-testing:${versions.coreTesting}"
+    testImplementation "junit:junit:${versions.junit}"
+    testImplementation "io.mockk:mockk:${versions.mockk}"
+}

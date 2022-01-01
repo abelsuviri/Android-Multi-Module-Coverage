@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "$rootProject.projectDir/gradleCommon/test-config.gradle"
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.abelsuviri.androidmultimodulecoverage"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dependencies {
+        implementation "com.google.android.material:material:${versions.material}"
+        implementation "androidx.appcompat:appcompat:${versions.appCompat}"
+        implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+        implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+        implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}

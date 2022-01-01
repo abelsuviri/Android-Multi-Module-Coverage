@@ -1,0 +1,12 @@
+apply from: "$rootProject.projectDir/gradleCommon/android-module.gradle"
+
+android {
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation project(':secondFeatureDomain')
+    androidTestImplementation "androidx.test.ext:junit:${versions.androidxjunit}"
+}
